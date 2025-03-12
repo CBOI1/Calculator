@@ -58,15 +58,18 @@ operatorButtons.forEach((operatorBtn) => {
         } else if (val1 === null) {
             val1 = displayVal;
             operator = selectedOperator;
+            clearOnInput = true;
         } else {
             //process currently selected operator before updating
             displayVal = operate(operator, val1, displayVal);
-            val1 = null;
+            //reset vals when "=" operator selected 
+            //thus impossible to call operate() with operator assigned to "="
+            val1 = selectedOperator === "=" ? null : displayVal;
             val2 = null;
             operator = selectedOperator;
             display.textContent = displayVal;
+            clearOnInput = true;
         }
-        clearOnInput = true;
     });
 })
 
