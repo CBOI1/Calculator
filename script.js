@@ -37,7 +37,10 @@ let clearOnInput = false;
 const digitButtons = document.querySelectorAll(".digit-btn");
 const operatorButtons = document.querySelectorAll(".operator-btn");
 const display = document.querySelector(".display");
+const clearBtn = document.querySelector(".clear-btn");
 
+//set intial display to 0
+display.textContent = 0;
 digitButtons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
         if (clearOnInput) {
@@ -73,7 +76,12 @@ operatorButtons.forEach((operatorBtn) => {
     });
 })
 
-
+clearBtn.addEventListener("click" , (e) => {
+    val1 = null;
+    val2 = null;
+    displayVal = 0;
+    display.textContent = displayVal;
+})
 
 
 
