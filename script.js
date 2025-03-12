@@ -53,13 +53,15 @@ digitButtons.forEach((btn) => {
 operatorButtons.forEach((operatorBtn) => {
     operatorBtn.addEventListener("click", (e) => {
         const selectedOperator = e.target.textContent;
-        if (val1 === null) {
+        if (val1 === null && selectedOperator === "=") {
+            return;
+        } else if (val1 === null) {
             val1 = displayVal;
             operator = selectedOperator;
         } else {
             //process currently selected operator before updating
             displayVal = operate(operator, val1, displayVal);
-            val1 = displayVal;
+            val1 = null;
             val2 = null;
             operator = selectedOperator;
             display.textContent = displayVal;
