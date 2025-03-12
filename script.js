@@ -84,7 +84,15 @@ clearBtn.addEventListener("click" , (e) => {
 })
 
 
-
+//set dimensions of buttons 
+const inputBtns = document.querySelectorAll("button");
+inputBtns.forEach((btn) => {
+    const parent = btn.parentElement;
+    const width = parent.clientWidth / 4;
+    const height = parent.clientHeight / 4;
+    btn.style.height = `${height}px`;
+    btn.style.width = `${width}px`;
+});
 
 
 
