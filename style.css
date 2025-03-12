@@ -8,6 +8,10 @@ button {
     font-family: monospace;
 }
 
+.digit-btn {
+    background-color: #e9af34;
+}
+
 .container {
     width: 400px; 
     border: 10px solid #a6a9c3;
